@@ -3,9 +3,9 @@
 <rect x="0.5" y="22" width="3" height="40" rx="1.5" fill="#0a7ea4"/>
 <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif">
   <text x="24" y="40" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="15" font-weight="700" fill="#1f2328">comix_search</text>
-  <text x="406" y="38" text-anchor="end" font-size="20" font-weight="700" fill="#c4500f">37 мс</text>
-  <text x="406" y="56" text-anchor="end" font-size="11" fill="#59636e">p95 под нагрузкой</text>
-  <text x="24" y="84" font-size="13" fill="#59636e">Поиск на микросервисах: gRPC, события через</text><text x="24" y="103" font-size="13" fill="#59636e">NATS, стемминг и инвертированный индекс</text>
+  <text x="406" y="38" text-anchor="end" font-size="20" font-weight="700" fill="#c4500f">37 ms</text>
+  <text x="406" y="56" text-anchor="end" font-size="11" fill="#59636e">p95 under load</text>
+  <text x="24" y="84" font-size="13" fill="#59636e">Microservice search: gRPC, NATS events,</text><text x="24" y="103" font-size="13" fill="#59636e">stemming and an in-memory inverted index</text>
   <rect x="24" y="128" width="29" height="22" rx="11" fill="#e6f1f6"/><text x="38.5" y="143" text-anchor="middle" font-size="11.5" fill="#0a7ea4">Go</text><rect x="59" y="128" width="42" height="22" rx="11" fill="#e6f1f6"/><text x="80.0" y="143" text-anchor="middle" font-size="11.5" fill="#0a7ea4">gRPC</text><rect x="107" y="128" width="42" height="22" rx="11" fill="#e6f1f6"/><text x="128.0" y="143" text-anchor="middle" font-size="11.5" fill="#0a7ea4">NATS</text><rect x="155" y="128" width="80" height="22" rx="11" fill="#e6f1f6"/><text x="195.0" y="143" text-anchor="middle" font-size="11.5" fill="#0a7ea4">PostgreSQL</text>
 </g>
 </svg>

@@ -18,30 +18,55 @@ THEMES = {
 FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif"
 MONO = "ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace"
 
+# slug и стек одинаковы для обоих языков
 PROJECTS = [
-    # slug, описание (2 строки), значение, подпись, стек
-    ("food-delivery-platform",
-     ["B2C + B2B API, вебхуки, Transactional Outbox,", "идемпотентность, ноль перепродаж"],
-     "1600/с", "заказов · p99 ≤ 17 мс", ["Go", "PostgreSQL", "OpenAPI", "k6"]),
-    ("comix_search",
-     ["Поиск на микросервисах: gRPC, события через", "NATS, полнотекстовый поиск с лемматизацией"],
-     "37 мс", "p95 под нагрузкой", ["Go", "gRPC", "NATS", "PostgreSQL"]),
-    ("reviewer_assignment",
-     ["Назначение ревьюеров для PR, фоновая очередь", "на FOR UPDATE SKIP LOCKED"],
-     "141 RPS", "p95 = 83 мс · 0 % ошибок", ["Go", "PostgreSQL", "k6"]),
-    ("loglinter",
-     ["Плагин golangci-lint: проверяет вызовы slog / zap", "и ловит утечки секретов в логах"],
-     "AST", "go/analysis · go/types", ["Go", "golangci-lint"]),
-    ("CIS-engine",
-     ["Краулер, индексатор и поисковый API,", "CLI с релизами под Windows, macOS, Linux"],
-     "3 ОС", "GoReleaser · testcontainers", ["Go", "PostgreSQL", "Kubernetes"]),
-    ("codecrafters-shell-go",
-     ["POSIX-оболочка: конвейеры, перенаправления,", "история и автодополнение по Tab"],
-     "POSIX", "pipes · redirects", ["Go"]),
+    ("food-delivery-platform", ["Go", "PostgreSQL", "OpenAPI", "k6"]),
+    ("comix_search", ["Go", "gRPC", "NATS", "PostgreSQL"]),
+    ("reviewer_assignment", ["Go", "PostgreSQL", "k6"]),
+    ("CIS-engine", ["Go", "PostgreSQL", "Kubernetes"]),
+    ("loglinter", ["Go", "golangci-lint"]),
+    ("codecrafters-shell-go", ["Go"]),
 ]
 
+# язык -> slug -> (описание в 2 строки, значение, подпись)
+TEXT = {
+    "ru": {
+        "food-delivery-platform": (["B2C + B2B API, вебхуки, Transactional Outbox,", "идемпотентность, ноль перепродаж"],
+                                   "1600/с", "заказов · p99 ≤ 17 мс"),
+        "comix_search": (["Поиск на микросервисах: gRPC, события через", "NATS, стемминг и инвертированный индекс"],
+                         "37 мс", "p95 под нагрузкой"),
+        "reviewer_assignment": (["Назначение ревьюеров для PR, фоновая очередь", "на FOR UPDATE SKIP LOCKED"],
+                                "141 RPS", "p95 = 83 мс · 0 % ошибок"),
+        "CIS-engine": (["Краулер, индексатор и поисковый API,", "CLI с релизами под Windows, macOS, Linux"],
+                       "3 ОС", "GoReleaser · testcontainers"),
+        "loglinter": (["Плагин golangci-lint: проверяет вызовы slog / zap", "и ловит утечки секретов в логах"],
+                      "AST", "go/analysis · go/types"),
+        "codecrafters-shell-go": (["POSIX-оболочка: конвейеры, перенаправления,", "история и автодополнение по Tab"],
+                                  "POSIX", "pipes · redirects"),
+    },
+    "en": {
+        "food-delivery-platform": (["B2C + B2B API, webhooks, transactional outbox,", "idempotency, zero overselling"],
+                                   "1600/s", "orders · p99 ≤ 17 ms"),
+        "comix_search": (["Microservice search: gRPC, NATS events,", "stemming and an in-memory inverted index"],
+                         "37 ms", "p95 under load"),
+        "reviewer_assignment": (["Assigns PR reviewers, background job queue", "on FOR UPDATE SKIP LOCKED"],
+                                "141 RPS", "p95 = 83 ms · 0% errors"),
+        "CIS-engine": (["Crawler, indexer and search API,", "CLI released for Windows, macOS and Linux"],
+                       "3 OSes", "GoReleaser · testcontainers"),
+        "loglinter": (["golangci-lint plugin that checks slog / zap calls", "and catches secrets leaking into logs"],
+                      "AST", "go/analysis · go/types"),
+        "codecrafters-shell-go": (["POSIX shell: pipelines, redirections,", "history and Tab completion"],
+                                  "POSIX", "pipes · redirects"),
+    },
+}
 
-def header(t):
+HEADER = {
+    "ru": ("Илья Богатов", "Сервисы на {go} и серверы реального времени на {rust}"),
+    "en": ("Ilya Bogatov", "{go} services and real-time servers in {rust}"),
+}
+
+
+def header(t, lang):
     w, h = 880, 230
     # граф «сервисов» справа: узлы и рёбра, по рёбрам бегут пакеты
     nodes = [(600, 70), (700, 45), (790, 95), (660, 140), (760, 180), (840, 150), (560, 175)]
@@ -58,6 +83,10 @@ def header(t):
     circles = "".join(
         f'<circle cx="{x}" cy="{y}" r="7" fill="{t["card"]}" stroke="{t["accent"] if i % 3 else t["accent2"]}" stroke-width="2"/>'
         for i, (x, y) in enumerate(nodes))
+    name, tagline = HEADER[lang]
+    tagline = escape(tagline).format(
+        go=f'<tspan fill="{t["accent"]}" font-weight="600">Go</tspan>',
+        rust=f'<tspan fill="{t["accent2"]}" font-weight="600">Rust</tspan>')
     dots = "".join(
         f'<circle cx="{x}" cy="{y}" r="1" fill="{t["grid"]}"/>'
         for x in range(500, w, 20) for y in range(10, h, 20))
@@ -71,15 +100,15 @@ def header(t):
 {"".join(lines)}{"".join(packets)}{circles}
 <g font-family="{FONT}">
   <text x="44" y="62" font-family="{MONO}" font-size="14" fill="{t["accent"]}">// backend · systems</text>
-  <text x="42" y="112" font-size="44" font-weight="700" fill="{t["text"]}">Илья Богатов</text>
-  <text x="44" y="146" font-size="18" fill="{t["muted"]}">Сервисы на <tspan fill="{t["accent"]}" font-weight="600">Go</tspan> и серверы реального времени на <tspan fill="{t["accent2"]}" font-weight="600">Rust</tspan></text>
+  <text x="42" y="112" font-size="44" font-weight="700" fill="{t["text"]}">{name}</text>
+  <text x="44" y="146" font-size="18" fill="{t["muted"]}">{tagline}</text>
   <text x="44" y="192" font-family="{MONO}" font-size="14" fill="{t["muted"]}"><tspan fill="{t["accent"]}">$</tspan> go test -race ./... <tspan fill="#3fb950">ok</tspan><tspan class="cursor" fill="{t["text"]}"> ▍</tspan></text>
 </g>
 </svg>
 '''
 
 
-def card(t, slug, desc, value, label, stack):
+def card(t, slug, stack, desc, value, label):
     w, h = 430, 170
     chips, x = [], 24
     for s in stack:
@@ -105,7 +134,9 @@ def card(t, slug, desc, value, label, stack):
 '''
 
 
-for name, t in THEMES.items():
-    (OUT / f"header-{name}.svg").write_text(header(t))
-    for p in PROJECTS:
-        (OUT / f"{p[0]}-{name}.svg").write_text(card(t, *p))
+for lang in TEXT:
+    suffix = "" if lang == "ru" else f"-{lang}"
+    for name, t in THEMES.items():
+        (OUT / f"header-{name}{suffix}.svg").write_text(header(t, lang))
+        for slug, stack in PROJECTS:
+            (OUT / f"{slug}-{name}{suffix}.svg").write_text(card(t, slug, stack, *TEXT[lang][slug]))

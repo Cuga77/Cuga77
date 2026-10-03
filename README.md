@@ -1,33 +1,31 @@
-### Илья Богатов
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg"><img src="assets/header-light.svg" alt="Илья Богатов — backend / systems, Go и Rust" width="100%"></picture>
 
-Backend / systems-разработчик · **Go** и **Rust** · Санкт-Петербург
+<p align="center">
+  <a href="https://t.me/ibogatov999"><img src="https://img.shields.io/badge/Telegram-ibogatov999-26A5E4?style=flat-square&logo=telegram&logoColor=white" alt="Telegram"></a>
+  <a href="mailto:bigatov2021@yandex.ru"><img src="https://img.shields.io/badge/Email-bigatov2021@yandex.ru-FC3F1D?style=flat-square&logo=maildotru&logoColor=white" alt="Email"></a>
+  <img src="https://img.shields.io/badge/Санкт--Петербург-hybrid%20%2F%20remote-555?style=flat-square" alt="Санкт-Петербург">
+</p>
 
 Пишу сервисы, которые остаются корректными под конкурентной нагрузкой, и серверы реального времени.
-Сейчас — авторитетный сервер модульной платформы симуляции на Rust (Bevy ECS, UDP, Wasm-компоненты с транзакционным откатом).
-Магистратура СПбГЭТУ «ЛЭТИ».
+Сейчас — авторитетный сервер модульной платформы симуляции на **Rust**: Bevy ECS, сетевые контракты поверх UDP,
+Wasm-компоненты с транзакционным откатом. Магистратура СПбГЭТУ «ЛЭТИ».
 
----
+### Избранные проекты
 
-#### Избранные проекты
+<p>
+  <a href="https://github.com/Cuga77/food-delivery-platform"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/food-delivery-platform-dark.svg"><img src="assets/food-delivery-platform-light.svg" alt="food-delivery-platform" width="49%"></picture></a> <a href="https://github.com/Cuga77/comix_search"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/comix_search-dark.svg"><img src="assets/comix_search-light.svg" alt="comix_search" width="49%"></picture></a>
+</p>
+<p>
+  <a href="https://github.com/Cuga77/reviewer_assignment"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/reviewer_assignment-dark.svg"><img src="assets/reviewer_assignment-light.svg" alt="reviewer_assignment" width="49%"></picture></a> <a href="https://github.com/Cuga77/loglinter"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/loglinter-dark.svg"><img src="assets/loglinter-light.svg" alt="loglinter" width="49%"></picture></a>
+</p>
+<p>
+  <a href="https://github.com/Cuga77/CIS-engine"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/CIS-engine-dark.svg"><img src="assets/CIS-engine-light.svg" alt="CIS-engine" width="49%"></picture></a> <a href="https://github.com/Cuga77/codecrafters-shell-go"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/codecrafters-shell-go-dark.svg"><img src="assets/codecrafters-shell-go-light.svg" alt="codecrafters-shell-go" width="49%"></picture></a>
+</p>
 
-| | |
-|---|---|
-| [**food-delivery-platform**](https://github.com/Cuga77/food-delivery-platform) | Доставка еды: B2C + B2B API, вебхуки, Transactional Outbox, идемпотентность. **1600 заказов/с, p99 ≤ 17 мс**, ноль перепродаж при 200 параллельных клиентах.<br><sub>Go · PostgreSQL · OpenAPI · k6</sub> |
-| [**comix_search**](https://github.com/Cuga77/comix_search) | Поиск на микросервисах: gRPC, события через NATS, полнотекстовый поиск с лемматизацией. **p95 = 37 мс**, краулер в 6 раз быстрее последовательного.<br><sub>Go · gRPC · NATS · PostgreSQL · Vue</sub> |
-| [**reviewer_assignment**](https://github.com/Cuga77/reviewer_assignment) | Назначение ревьюеров для PR, фоновая очередь на `FOR UPDATE SKIP LOCKED`. **~141 RPS при p95 = 83 мс**, 0 % ошибок.<br><sub>Go · PostgreSQL · k6</sub> |
-| [**loglinter**](https://github.com/Cuga77/loglinter) | Плагин golangci-lint: проверяет вызовы `slog` / `zap` и ищет утечки секретов в логах.<br><sub>Go · go/analysis · go/types</sub> |
-| [**CIS-engine**](https://github.com/Cuga77/CIS-engine) | Поисковый движок: краулер, индексатор и API, CLI с релизами под три ОС.<br><sub>Go · PostgreSQL · GoReleaser · testcontainers</sub> |
-| [**codecrafters-shell-go**](https://github.com/Cuga77/codecrafters-shell-go) | POSIX-совместимая оболочка: конвейеры, перенаправления, история, автодополнение.<br><sub>Go</sub> |
+### Стек
 
----
+<p>
+  <img src="https://skillicons.dev/icons?i=go,rust,postgres,docker,kubernetes,githubactions,gitlab,linux,cs,python&perline=10" alt="Go, Rust, PostgreSQL, Docker, Kubernetes, GitHub Actions, GitLab, Linux, C#, Python">
+</p>
 
-#### Стек
-
-**Go** — net/http, chi, Gin, gRPC, pgx, go/analysis  
-**Rust** — Bevy (ECS), Lightyear, Wasmtime / WIT, Rapier  
-**Данные** — PostgreSQL, NATS, MongoDB  
-**Инфраструктура** — Docker, GitHub Actions, GitLab CI, k6, Tracy
-
----
-
-[Telegram](https://t.me/ibogatov999) · [bigatov2021@yandex.ru](mailto:bigatov2021@yandex.ru)
+<sub>gRPC · NATS · chi · Gin · pgx · Bevy · Lightyear · Wasmtime · Rapier · k6 · Tracy</sub>

@@ -8,6 +8,7 @@
 Запуск: python3 assets/gen.py  (нужен доступ в интернет)
 """
 import base64
+import hashlib
 import re
 import urllib.parse
 import urllib.request
@@ -149,10 +150,25 @@ def card(t, face, slug, stack, desc, value, label):
 
 
 face = font_face()
+files = {}
 for lang in TEXT:
     suffix = "" if lang == "ru" else f"-{lang}"
-    # шапка одинаковая в обеих темах; оба файла остаются, чтобы не менять README
+    # шапка одинаковая в обеих темах; оба файла остаются, чтобы не менять разметку README
     for name, t in THEMES.items():
-        (OUT / f"header-{name}{suffix}.svg").write_text(header(lang, face))
+        files[f"header-{name}{suffix}"] = header(lang, face)
         for slug, stack in PROJECTS:
-            (OUT / f"{slug}-{name}{suffix}.svg").write_text(card(t, face, slug, stack, *TEXT[lang][slug]))
+            files[f"{slug}-{name}{suffix}"] = card(t, face, slug, stack, *TEXT[lang][slug])
+
+# В имени файла хэш всех картинок: GitHub отдаёт их через редирект без query-строки,
+# и браузер держит старую версию в кэше, пока не изменится сам путь.
+version = hashlib.sha1("".join(files[k] for k in sorted(files)).encode()).hexdigest()[:8]
+for old in OUT.glob("*.svg"):
+    old.unlink()
+for base, svg in files.items():
+    (OUT / f"{base}.{version}.svg").write_text(svg)
+
+for readme in ("README.md", "README.en.md"):
+    path = OUT.parent / readme
+    text = re.sub(r"(assets/[\w-]+?)(?:\.[0-9a-f]{8})?\.svg(?:\?v=\d+)?", rf"\1.{version}.svg", path.read_text())
+    path.write_text(text)
+print("version", version)

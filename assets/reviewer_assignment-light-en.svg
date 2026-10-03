@@ -7,7 +7,7 @@
   <text x="28" y="108" font-size="14.5" fill="#5e626b">Assigns PR reviewers, background job queue</text><text x="28" y="129" font-size="14.5" fill="#5e626b">on FOR UPDATE SKIP LOCKED</text>
   <text x="28" y="162" font-size="13.5" fill="#8b8f97">p95 = 83 ms, 0% errors</text>
   <text x="28" y="196" font-size="34" font-weight="700" letter-spacing="-0.8" fill="#16171a">141 RPS</text>
-  <circle cx="382" cy="182" r="22" fill="#ffdd2d"/>
-  <text x="382" y="189" text-anchor="middle" font-size="20" font-weight="500" fill="#16171a">→</text>
+  <circle cx="382" cy="182" r="22" fill="#2b5cff"/>
+  <text x="382" y="189" text-anchor="middle" font-size="20" font-weight="500" fill="#ffffff">→</text>
 </g>
 </svg>

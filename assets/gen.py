@@ -16,7 +16,7 @@ from xml.sax.saxutils import escape
 
 OUT = Path(__file__).parent
 
-YELLOW = "#ffdd2d"
+ACCENT = "#2b5cff"
 THEMES = {
     "light": dict(card="#f3f4f6", title="#16171a", text="#5e626b", muted="#8b8f97"),
     "dark": dict(card="#232428", title="#f5f5f7", text="#b4b7bd", muted="#80848c"),
@@ -116,12 +116,12 @@ def header(lang, face):
         y += 48 + 10
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">
 <style>{face}</style>
-<rect width="{w}" height="{h}" rx="28" fill="{YELLOW}"/>
-<g font-family="{FONT}" fill="#16171a">
+<rect width="{w}" height="{h}" rx="28" fill="{ACCENT}"/>
+<g font-family="{FONT}" fill="#ffffff">
   {"".join(pills)}
   <text x="48" y="104" font-size="54" font-weight="700" letter-spacing="-1.5">{escape(name)}</text>
   <text x="48" y="148" font-size="24" font-weight="500">{escape(role)}</text>
-  <text x="48" y="196" font-size="17" fill="#4a4a40">{escape(sub)}</text>
+  <text x="48" y="196" font-size="17" fill="#ffffff" fill-opacity="0.75">{escape(sub)}</text>
 </g>
 </svg>
 '''
@@ -141,8 +141,8 @@ def card(t, face, slug, stack, desc, value, label):
   {desc_svg}
   <text x="28" y="162" font-size="13.5" fill="{t["muted"]}">{escape(label)}</text>
   <text x="28" y="196" font-size="34" font-weight="700" letter-spacing="-0.8" fill="{t["title"]}">{escape(value)}</text>
-  <circle cx="{w - 48}" cy="{h - 46}" r="22" fill="{YELLOW}"/>
-  <text x="{w - 48}" y="{h - 39}" text-anchor="middle" font-size="20" font-weight="500" fill="#16171a">{ARROW}</text>
+  <circle cx="{w - 48}" cy="{h - 46}" r="22" fill="{ACCENT}"/>
+  <text x="{w - 48}" y="{h - 39}" text-anchor="middle" font-size="20" font-weight="500" fill="#ffffff">{ARROW}</text>
 </g>
 </svg>
 '''
@@ -151,7 +151,7 @@ def card(t, face, slug, stack, desc, value, label):
 face = font_face()
 for lang in TEXT:
     suffix = "" if lang == "ru" else f"-{lang}"
-    # шапка жёлтая в обеих темах; оба файла остаются, чтобы не менять README
+    # шапка одинаковая в обеих темах; оба файла остаются, чтобы не менять README
     for name, t in THEMES.items():
         (OUT / f"header-{name}{suffix}.svg").write_text(header(lang, face))
         for slug, stack in PROJECTS:

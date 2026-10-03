@@ -7,7 +7,7 @@
   <text x="28" y="108" font-size="14.5" fill="#b4b7bd">Microservice search: gRPC, NATS events,</text><text x="28" y="129" font-size="14.5" fill="#b4b7bd">stemming and an in-memory inverted index</text>
   <text x="28" y="162" font-size="13.5" fill="#80848c">p95 under load</text>
   <text x="28" y="196" font-size="34" font-weight="700" letter-spacing="-0.8" fill="#f5f5f7">37 ms</text>
-  <circle cx="382" cy="182" r="22" fill="#ffdd2d"/>
-  <text x="382" y="189" text-anchor="middle" font-size="20" font-weight="500" fill="#16171a">→</text>
+  <circle cx="382" cy="182" r="22" fill="#2b5cff"/>
+  <text x="382" y="189" text-anchor="middle" font-size="20" font-weight="500" fill="#ffffff">→</text>
 </g>
 </svg>

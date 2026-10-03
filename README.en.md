@@ -2,16 +2,11 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/header-dark-en.svg"><img src="assets/header-light-en.svg" alt="Ilya Bogatov — backend / systems, Go and Rust" width="100%"></picture>
 
-<p align="center">
-  <a href="https://t.me/ibogatov999"><img src="https://img.shields.io/badge/Telegram-ibogatov999-26A5E4?style=flat-square&logo=telegram&logoColor=white" alt="Telegram"></a>
-  <a href="mailto:bigatov2021@yandex.ru"><img src="https://img.shields.io/badge/Email-bigatov2021@yandex.ru-FC3F1D?style=flat-square&logo=maildotru&logoColor=white" alt="Email"></a>
-  <img src="https://img.shields.io/badge/Saint%20Petersburg-hybrid%20%2F%20remote-555?style=flat-square" alt="Saint Petersburg">
-</p>
+<p><a href="https://t.me/ibogatov999">Telegram</a> · <a href="mailto:bigatov2021@yandex.ru">bigatov2021@yandex.ru</a></p>
 
 I build services that stay correct under concurrent load, and real-time servers.
 Currently working on the authoritative server of a modular real-time simulation platform in **Rust**:
 Bevy ECS, versioned network contracts over UDP, Wasm components with transactional rollback.
-Master's student at ETU "LETI", Saint Petersburg.
 
 ### Featured projects
 
@@ -27,8 +22,7 @@ Master's student at ETU "LETI", Saint Petersburg.
 
 ### Stack
 
-<p>
-  <img src="https://skillicons.dev/icons?i=go,rust,postgres,docker,kubernetes,githubactions,gitlab,linux,cs,python&perline=10" alt="Go, Rust, PostgreSQL, Docker, Kubernetes, GitHub Actions, GitLab, Linux, C#, Python">
-</p>
-
-<sub>gRPC · NATS · chi · Gin · pgx · Bevy · Lightyear · Wasmtime · Rapier · k6 · Tracy</sub>
+**Go**: net/http, chi, Gin, gRPC, pgx, go/analysis<br>
+**Rust**: Bevy (ECS), Lightyear, Wasmtime / WIT, Rapier<br>
+**Data**: PostgreSQL, NATS, MongoDB<br>
+**Infrastructure**: Docker, GitHub Actions, GitLab CI, k6, Tracy

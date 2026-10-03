@@ -2,15 +2,11 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg"><img src="assets/header-light.svg" alt="Илья Богатов — backend / systems, Go и Rust" width="100%"></picture>
 
-<p align="center">
-  <a href="https://t.me/ibogatov999"><img src="https://img.shields.io/badge/Telegram-ibogatov999-26A5E4?style=flat-square&logo=telegram&logoColor=white" alt="Telegram"></a>
-  <a href="mailto:bigatov2021@yandex.ru"><img src="https://img.shields.io/badge/Email-bigatov2021@yandex.ru-FC3F1D?style=flat-square&logo=maildotru&logoColor=white" alt="Email"></a>
-  <img src="https://img.shields.io/badge/Санкт--Петербург-hybrid%20%2F%20remote-555?style=flat-square" alt="Санкт-Петербург">
-</p>
+<p><a href="https://t.me/ibogatov999">Telegram</a> · <a href="mailto:bigatov2021@yandex.ru">bigatov2021@yandex.ru</a></p>
 
 Пишу сервисы, которые остаются корректными под конкурентной нагрузкой, и серверы реального времени.
 Сейчас — авторитетный сервер модульной платформы симуляции на **Rust**: Bevy ECS, сетевые контракты поверх UDP,
-Wasm-компоненты с транзакционным откатом. Магистратура СПбГЭТУ «ЛЭТИ».
+Wasm-компоненты с транзакционным откатом.
 
 ### Избранные проекты
 
@@ -26,8 +22,7 @@ Wasm-компоненты с транзакционным откатом. Маг
 
 ### Стек
 
-<p>
-  <img src="https://skillicons.dev/icons?i=go,rust,postgres,docker,kubernetes,githubactions,gitlab,linux,cs,python&perline=10" alt="Go, Rust, PostgreSQL, Docker, Kubernetes, GitHub Actions, GitLab, Linux, C#, Python">
-</p>
-
-<sub>gRPC · NATS · chi · Gin · pgx · Bevy · Lightyear · Wasmtime · Rapier · k6 · Tracy</sub>
+**Go** — net/http, chi, Gin, gRPC, pgx, go/analysis<br>
+**Rust** — Bevy (ECS), Lightyear, Wasmtime / WIT, Rapier<br>
+**Данные** — PostgreSQL, NATS, MongoDB<br>
+**Инфраструктура** — Docker, GitHub Actions, GitLab CI, k6, Tracy

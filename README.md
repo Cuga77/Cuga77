@@ -16,10 +16,10 @@ Wasm-компоненты с транзакционным откатом. Маг
   <a href="https://github.com/Cuga77/food-delivery-platform"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/food-delivery-platform-dark.svg"><img src="assets/food-delivery-platform-light.svg" alt="food-delivery-platform" width="49%"></picture></a> <a href="https://github.com/Cuga77/comix_search"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/comix_search-dark.svg"><img src="assets/comix_search-light.svg" alt="comix_search" width="49%"></picture></a>
 </p>
 <p>
-  <a href="https://github.com/Cuga77/reviewer_assignment"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/reviewer_assignment-dark.svg"><img src="assets/reviewer_assignment-light.svg" alt="reviewer_assignment" width="49%"></picture></a> <a href="https://github.com/Cuga77/loglinter"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/loglinter-dark.svg"><img src="assets/loglinter-light.svg" alt="loglinter" width="49%"></picture></a>
+  <a href="https://github.com/Cuga77/reviewer_assignment"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/reviewer_assignment-dark.svg"><img src="assets/reviewer_assignment-light.svg" alt="reviewer_assignment" width="49%"></picture></a> <a href="https://github.com/Cuga77/CIS-engine"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/CIS-engine-dark.svg"><img src="assets/CIS-engine-light.svg" alt="CIS-engine" width="49%"></picture></a>
 </p>
 <p>
-  <a href="https://github.com/Cuga77/CIS-engine"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/CIS-engine-dark.svg"><img src="assets/CIS-engine-light.svg" alt="CIS-engine" width="49%"></picture></a> <a href="https://github.com/Cuga77/codecrafters-shell-go"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/codecrafters-shell-go-dark.svg"><img src="assets/codecrafters-shell-go-light.svg" alt="codecrafters-shell-go" width="49%"></picture></a>
+  <a href="https://github.com/Cuga77/loglinter"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/loglinter-dark.svg"><img src="assets/loglinter-light.svg" alt="loglinter" width="49%"></picture></a> <a href="https://github.com/Cuga77/codecrafters-shell-go"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/codecrafters-shell-go-dark.svg"><img src="assets/codecrafters-shell-go-light.svg" alt="codecrafters-shell-go" width="49%"></picture></a>
 </p>
 
 ### Стек
